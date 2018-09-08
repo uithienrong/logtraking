@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/inventory.js"></script>
+<link href="/main.css" rel="stylesheet">
+
+
+<div style="margin-left:50px;margin-right:50px">
+    <div class="header panel-heading" style="background-image:linear-gradient(347deg, #48c6ef, #2399d2);height: 80px;text-align: center;">
+        <img src="/logo-tma.png" alt="logo-tma" style="width:100px; padding: 10px 0; height: auto; float: left">
+        <h2 style="margin-left: 150px;color: white;font-weight: bold;">TMA WEB LOG</h2>
+    </div>
+    <hr>
+    <div class="col-md-12">
+        <div class="btn-group" style="border-radius: 16px; border-style: double; padding: 5px;">
+            <h4>Type of Inventory</h4>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="width: 140px">
+                SIM <span class="caret"><!-- --></span>
+            </button>
+            <ul class="dropdown-menu dropdown-wide">
+                <li><a href="/inventory">Module</a></li>
+                <li><a href="/inventory/uart">Uart</a></li>
+                <li><a href="/inventory/devkit">Devkit</a></li>
+                <li><a href="/inventory/usb">USB</a></li>
+                <li><a href="/inventory/powersupply">Power Supply</a></li>
+                <li><a href="/inventory/sim">SIM</a></li>
+                <li><a href="/inventory/anthena">Antenna</a></li>
+                <li><a href="/inventory/other">Others</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="rowq">
+        <div style="text-align: right; margin-top: 10px;font-weight: bold">Total:<div id="total" style="display: inline"><%= sim.length %></div></div>
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">SIM Information</h3>
+                <div class="pull-right">
+                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                </div>
+            </div>
+            <div id="backup_data"></div>
+            <div style="overflow-x:scroll;overflow-y:scroll;height:600px">
+                <table class="table" id="mytable">
+                    <thead>
+                    <tr class="filters" style="width:100%">
+                        <th><input style="width:40px" type="text" class="form-control"  placeholder="No" disabled></th>
+                        <th><input style="width:100px" type="text" class="form-control"  placeholder="Asset Tag" disabled></th>
+                        <th><input style="width:100px" type="text" class="form-control"  placeholder="Model" disabled></th>
+                        <th><input style="width:100px" type="text" class="form-control"  placeholder="Location" disabled></th>
+                        <th><input style="width:100px" type="text" class="form-control"  placeholder="Status" disabled></th>
+                        <th><input style="width:100px" type="text" class="form-control"  placeholder="Owner" disabled></th>
+                        <th><input style="width:100px" type="text" class="form-control"  placeholder="Date" disabled></th>
+                        <th><input style="width:300px" type="text" class="form-control"  placeholder="Note" disabled></th>
+                        <th><input style="width:500px" type="text" class="form-control"  placeholder="Subcriber" disabled></th>
+                        <th colspan="4" style="text-align: center">MANAGEMENT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% if(sim != null) {%>
+                        <% for(var i = 0; i < sim.length; i++) {%>
+                            <tr>
+                                <input type="hidden" value="<%= sim[i]._id %>">
+                                <td><%= i + 1 %></td>
+                                <td class="item"><%=sim[i].asset_tag%></td>
+                                <td class="item"><%=sim[i].model%></td>
+                                <td class="item"><%=sim[i].location%></td>
+                                <td class="item"><%=sim[i].status%></td>
+                                <td class="item"><%=sim[i].owner%></td>
+                                <td class="item"><%=sim[i].date%></td>
+                                <td class="item"><%=sim[i].note%></td>
+                                <td class="item" style="width: 20px"><%=sim[i].subcriber%></td>
+                                <td class="edit"> <button type="button" class="btn btn-success" onclick="management(this,'edit','id')">Edit</button> </td>
+                                <td class="delete"> <button type="button" class="btn btn-danger" onclick="management(this,'delete','sim')">Delete</button> </td>
+                                <td class="update" hidden> <button type="button" class="btn btn-primary" onclick="management(this,'update','sim')">Update</button> </td>
+                                <td class="cancel" hidden> <button type="button" class="btn btn" onclick="management(this,'cancel','id')">Cancel</button> </td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="manage">
+        <button type="button" class="btn btn-primary" onclick="newItem('sim')">New SIM</button>
+        <button type="button" class="btn btn-primary" style="margin-left: 10px;" onclick="upload()">Import Excel</button>
+        <button type="button" class="btn btn-primary"style="margin-left: 10px;">Export Excel</button>
+    </div>
+</div>

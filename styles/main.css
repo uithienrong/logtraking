@@ -1,0 +1,49 @@
+.filterable {
+    margin-top: 15px;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+}
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
+}
+ul.dropdown-wide {
+    width: 120px !important;
+}
+ul.drop-accordian-menu li {
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+}
+
+ul.drop-accordian-menu li a {
+    display: block;
+    padding: 5px 5px 5px 20px;
+    color: #000;
+    text-decoration: none;
+    font-size: 8pt;
+    font-style: normal;
+    width: auto;
+}
+
+ul.drop-accordian-menu a:hover {
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+input {
+    border-radius: 4px;
+}
