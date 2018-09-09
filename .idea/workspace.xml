@@ -1,10 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d4bcb1b-dfe6-4f51-bf39-832c93540e23" name="Default" comment="" />
+    <list default="true" id="4d4bcb1b-dfe6-4f51-bf39-832c93540e23" name="Default" comment="upload user login">
+      <change afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/bin/bcrypt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/dist/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/dist/bcrypt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/dist/bcrypt.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/dist/bcrypt.min.js.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/dist/bcrypt.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/externs/bcrypt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/externs/minimal-env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/scripts/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/impl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/prng/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/prng/accum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/prng/isaac.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/util/base64.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/src/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/src/wrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/tests/quickbrown.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/bcryptjs/tests/suite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/connect-flash/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/connect-flash/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/connect-flash/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/connect-flash/lib/flash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/connect-flash/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/connect-flash/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc16.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc16_ccitt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc16_kermit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc16_modbus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc16_xmodem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc24.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc32.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/crc8_1wire.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/create_buffer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/define_crc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/crc/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-session/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-session/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-session/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-session/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-session/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-session/session/cookie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-session/session/memory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-session/session/session.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-session/session/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/UPGRADE_GUIDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/check.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/check.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/location.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/one-of.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/one-of.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/runner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/schema.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/schema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/validation-chain-builders.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/validation-chain-builders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/validation-result.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/check/validation-result.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-check.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-filter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-legacy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-sanitization-chain.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-validation-chain.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-validation-result.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-custom-validators-sanitizers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-error-messages.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-sanitization.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-schema-validation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-whole-body-validation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-wildcards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/matched-data.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/matched-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitization-chain-builders.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitization-chain-builders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitize.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/chain-creator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/custom-methods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/express_validator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/legacy-runner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/tst.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/filters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/format-param-output.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/persist-values.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/select-fields.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/to-string.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/core/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/i18n/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/pages/en/versions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/sidebars.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/siteConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/static/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/static/img/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/static/img/favicon/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/static/img/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-check.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-filter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-legacy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-sanitization-chain.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-validation-chain.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-validation-result.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-custom-validators-sanitizers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-error-messages.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-sanitization.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-schema-validation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-whole-body-validation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-wildcards.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.3.0/api-filter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.3.0/api-validation-chain.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.3.0/feature-custom-validators-sanitizers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_sidebars/version-5.2.0-sidebars.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/on-headers/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/on-headers/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/on-headers/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/on-headers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/on-headers/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-local/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-local/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-local/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-local/lib/strategy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-local/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-local/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-strategy/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-strategy/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-strategy/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-strategy/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-strategy/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-strategy/lib/strategy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport-strategy/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/lib/authenticator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/lib/errors/authenticationerror.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/lib/framework/connect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/lib/http/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/lib/middleware/authenticate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/lib/middleware/initialize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/lib/sessionmanager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/lib/strategies/session.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/passport/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/pause/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/pause/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/pause/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/pause/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/pause/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/pause/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/random-bytes/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/random-bytes/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/random-bytes/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/random-bytes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/random-bytes/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/uid-safe/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/uid-safe/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/uid-safe/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/uid-safe/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/uid-safe/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/alpha.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/blacklist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/contains.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/equals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/escape.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isAfter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isAlpha.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isAlphanumeric.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isAscii.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isBase64.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isBefore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isBoolean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isByteLength.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isCreditCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isCurrency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isDataURI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isDecimal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isDivisibleBy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isEmail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isEmpty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isFQDN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isFloat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isFullWidth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isHalfWidth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isHash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isHexColor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isHexadecimal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isIP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isIPRange.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isISBN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isISIN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isISO31661Alpha2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isISO31661Alpha3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isISO8601.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isISRC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isISSN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isIn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isInt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isJSON.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isJWT.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isLatLong.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isLength.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isLowercase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isMACAddress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isMD5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isMagnetURI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isMimeType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isMobilePhone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isMongoId.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isMultibyte.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isNumeric.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isPort.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isPostalCode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isRFC3339.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isSurrogatePair.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isURL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isUUID.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isUppercase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isVariableWidth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/isWhitelisted.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/ltrim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/matches.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/normalizeEmail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/rtrim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/stripLow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/toBoolean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/toDate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/toFloat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/toInt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/trim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/unescape.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/util/assertString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/util/includes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/util/merge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/util/toString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/lib/whitelist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/validator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/validator/validator.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/login.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/register.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.ejs" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
+    <ignored path=".idea/vcs.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +297,66 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bower.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/node_modules/bcryptjs/src/bower.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/register.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="47" column="24" lean-forward="true" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/login.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newAnthena.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/inventory/new/newAnthena.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -26,8 +364,11 @@
       <file leaf-file-name="home.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/home.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
+            <state relative-caret-position="279">
+              <caret line="59" column="120" lean-forward="true" selection-start-line="59" selection-start-column="120" selection-end-line="59" selection-end-column="120" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,12 +383,24 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>configure</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/files/home.html" />
-        <option value="$PROJECT_DIR$/views/home.ejs" />
+        <option value="$PROJECT_DIR$/models/user.js" />
         <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/views/register.ejs" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/views/login.ejs" />
+        <option value="$PROJECT_DIR$/views/home.ejs" />
       </list>
     </option>
   </component>
@@ -57,8 +410,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="72" />
@@ -66,6 +424,7 @@
     <option name="width" value="1284" />
     <option name="height" value="728" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -75,13 +434,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="TMA_P1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TMA_P1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TMA_P1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TMA_P1" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="logtraking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logtraking" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -128,52 +482,158 @@
       <option name="presentableId" value="Default" />
       <updated>1532878041973</updated>
       <workItem from="1532878044918" duration="12256000" />
+      <workItem from="1536449890950" duration="16208000" />
+      <workItem from="1536533176929" duration="1210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12256000" />
+    <option name="totallyTimeSpent" value="29674000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16068643" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32972136" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13104524" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32972136" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32972136" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.21826625" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.30959752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32817337" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.18885449" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993808" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32972136" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="upload user login" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload user login" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/expressjs/README.md">
+    <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="45" lean-forward="true" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/expressjs/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/views/register.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
+        </state>
+      </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inventory/new/newAnthena.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="73" column="47" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/expressjs/README.md" />
+    <entry file="file://$PROJECT_DIR$/node_modules/expressjs/package.json" />
     <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_alert.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -216,17 +676,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/home.ejs">
+    <entry file="file://$PROJECT_DIR$/views/inventory/antenna.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inventory/uart.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
+        <state relative-caret-position="-765" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/register.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inventory/new/newAnthena.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="47" column="24" lean-forward="true" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="59" column="120" lean-forward="true" selection-start-line="59" selection-start-column="120" selection-end-line="59" selection-end-column="120" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bcryptjs/src/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>

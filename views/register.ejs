@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/main.js"></script>
+<link href="/main.css" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+
+<div style="margin-left:50px;margin-right:50px">
+    <div class="header panel-heading" style="background-image:linear-gradient(347deg, #48c6ef, #2399d2);height: 80px;text-align: center;">
+        <img src="/logo-tma.png" alt="logo-tma" style="width:100px; padding: 10px 0; height: auto; float: left">
+        <h2 style="margin-left: 150px;color: white;font-weight: bold;">TMA WEB LOG</h2>
+    </div>
+    <hr>
+    <p>Inspired by this <a href="http://tma.com.vn">TMA Solutions</a></p>
+    <div class="container">
+        <% if(errors) { %>
+            <% for (var i = 0; i < errors.length; i++) { %>
+                <div class="btn btn-danger"><%= errors[i].msg %></div>
+            <% } %>
+        <% } %>
+        <form action="/users/register" method="post">
+            <h2>Register New User</h2>
+            <br>
+            <div class="form-group">
+                <label>Name: </label>
+                <input type="text" class="form-control" name="name">
+            </div>
+            <div class="form-group">
+                <label>IP: </label>
+                <input type="text" class="form-control" name="ip">
+            </div>
+            <div class="form-group">
+                <label>User Name: </label>
+                <input type="text" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+                <label>Password: </label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <div class="form-group">
+                <label>Confirm: </label>
+                <input type="password" class="form-control" name="password2">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

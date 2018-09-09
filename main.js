@@ -6,6 +6,9 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+var flash = require('connect-flash');
+var session = require('express-session');
+
 
 //config database
 
@@ -39,20 +42,28 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 //load static file
+var router = require('./routes/users');
+app.use('/users', router);
+
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap')));
 app.use(express.static(path.join(__dirname, 'styles')));
 app.use(express.static(path.join(__dirname, 'script')));
 app.use(express.static(path.join(__dirname, 'image')));
+app.use(flash());
+app.use(session({
+    secret: 'woot',
+    resave: false,
+    saveUninitialized: false}));
 
 
 //functions
 app.get('/home', function (request, response) {
-
+    request.flash('info', 'regre');
 	mongo.connect(url, function (err, client) {
 		var db = client.db('informationAR75xx');
 		var data = db.collection('adminAR').find({}).sort({"timeStart": -1}).toArray(function (err,results) {
 			console.log(results);
-			response.render('home.ejs', { data: results });
+			response.render('home.ejs', { data: results,messages: request.flash('info') });
 		});
 	})
 })
