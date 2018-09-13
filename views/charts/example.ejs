@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    <title>TCs chart</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        Chart.defaults.line.spanGaps = true;
+        Chart.defaults.line.showLines = true;
+        var myChart =document.getElementById('myChart').getContext('2d');
+        var massPopChart = new Chart(myChart, {
+            type: 'line',
+            data: {
+                labels:['day 1','day 2','day 3'],
+                datasets: [{
+                    label: 'Testcase',
+                    data: [
+                        2,
+                        20,
+                        25,
+                    ],
+                    backgroundColor: "#00008B",
+                    fill: false
+                }]
+            },
+            options:{
+                elements: {
+                    line: {
+                        tension: 0, // disables bezier curves
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

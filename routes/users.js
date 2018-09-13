@@ -4,6 +4,8 @@ var expressValidator = require('express-validator');
 var bcrypt = require('bcryptjs');
 var flash = require('connect-flash');
 var session = require('express-session');
+var passport = require('passport');
+
 router.use(flash());
 router.use(session({
     secret: 'woot',
@@ -64,8 +66,35 @@ router.post('/register', function (req, res) {
 
 })
 
+//Login form
 router.get('/login', function (req, res) {
-    res.render('login', {message: req.flash('success')})
+    res.render('login', {success: req.flash('success'), error:req.flash('error'), authenticate_errors:null})
 })
+
+//Login process
+router.post('/login', function (req, res, next) {
+    var username = req.body.username;
+    var password = req.body.password;
+
+    req.checkBody('username', 'User Name is required').notEmpty();
+    req.checkBody('password', 'Password is required').notEmpty();
+
+    var errors =req.validationErrors();
+    if(errors){
+        res.render('login', {authenticate_errors:errors, success: null, error:null});
+    } else {
+        passport.authenticate('local', {
+            successRedirect: '/',
+            failureRedirect: '/users/login',
+            failureFlash: true
+        })(req, res, next);
+    }
+});
+
+router.get('/chart', function (req, res) {
+    res.render('charts/example.ejs')
+})
+
+
 
 module.exports = router;

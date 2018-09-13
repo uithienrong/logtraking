@@ -8,6 +8,7 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var session = require('express-session');
+var passport = require('passport');
 
 
 //config database
@@ -40,6 +41,12 @@ var arrExcel = xlsx.parse(__dirname + '/AR_INVENTORY.xlsx');
 //set view
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
+//Passport config
+require('./config/passport')(passport);
+//passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 //load static file
 var router = require('./routes/users');
@@ -700,6 +707,8 @@ app.post('/inventory/other/delete/:id', function(request, response){
         response.send({err: 0, redirectUrl: "/inventory/other"});
     })
 })
+
+
 
 app.listen(8080,'0.0.0.0', function () {
    console.log('Listen port 8080');
