@@ -2,15 +2,8 @@ const express = require('express');
 const router = express.Router();
 var expressValidator = require('express-validator');
 var bcrypt = require('bcryptjs');
-var flash = require('connect-flash');
-var session = require('express-session');
 var passport = require('passport');
 
-router.use(flash());
-router.use(session({
-    secret: 'woot',
-    resave: false,
-    saveUninitialized: false}));
 
 //Bring in User Model
 let User = require('../models/user');
@@ -91,10 +84,16 @@ router.post('/login', function (req, res, next) {
     }
 });
 
+router.get('/logout', function (req, res) {
+    req.logout();
+    req.flash('success', 'You are logged out!');
+    res.redirect('/users/login');
+})
+
+
 router.get('/chart', function (req, res) {
     res.render('charts/example.ejs')
 })
-
 
 
 module.exports = router;

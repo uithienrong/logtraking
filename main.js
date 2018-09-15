@@ -50,7 +50,8 @@ app.use(passport.session());
 
 //load static file
 var router = require('./routes/users');
-app.use('/users', router);
+var home_route = require('./routes/home');
+
 
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap')));
 app.use(express.static(path.join(__dirname, 'styles')));
@@ -58,19 +59,32 @@ app.use(express.static(path.join(__dirname, 'script')));
 app.use(express.static(path.join(__dirname, 'image')));
 app.use(flash());
 app.use(session({
-    secret: 'woot',
-    resave: false,
-    saveUninitialized: false}));
+    secret: 'foo',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
+
+
+//Express Messages Middleware
+app.use(function (req, res, next) {
+    res.locals.messages = require('express-messages')(req, res);
+    next();
+})
+
+app.use('/users', router);
+app.use('/', home_route);
+
 
 
 //functions
-app.get('/home', function (request, response) {
+app.get('/log', ensureAuthenticated, function (request, response) {
     request.flash('info', 'regre');
 	mongo.connect(url, function (err, client) {
 		var db = client.db('informationAR75xx');
 		var data = db.collection('adminAR').find({}).sort({"timeStart": -1}).toArray(function (err,results) {
 			console.log(results);
-			response.render('home.ejs', { data: results,messages: request.flash('info') });
+			response.render('log.ejs', { data: results,messages: request.flash('info') });
 		});
 	})
 })
@@ -708,6 +722,15 @@ app.post('/inventory/other/delete/:id', function(request, response){
     })
 })
 
+
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    } else {
+        req.flash('error','Please login');
+        res.redirect('/users/login');
+    }
+}
 
 
 app.listen(8080,'0.0.0.0', function () {
