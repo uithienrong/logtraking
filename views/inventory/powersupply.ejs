@@ -66,8 +66,8 @@
                                 <td class="item"><%=powerSupply[i].owner%></td>
                                 <td class="item"><%=powerSupply[i].date%></td>
                                 <td class="edit"> <button type="button" class="btn btn-success" onclick="management(this,'edit','id')">Edit</button> </td>
-                                <td class="delete"> <button type="button" class="btn btn-danger" onclick="management(this,'delete','powersupply')">Delete</button> </td>
-                                <td class="update" hidden> <button type="button" class="btn btn-primary" onclick="management(this,'update','powersupply')">Update</button> </td>
+                                <td class="delete"> <button type="button" class="btn btn-danger" onclick="management(this,'delete','powersupply.js')">Delete</button> </td>
+                                <td class="update" hidden> <button type="button" class="btn btn-primary" onclick="management(this,'update','powersupply.js')">Update</button> </td>
                                 <td class="cancel" hidden> <button type="button" class="btn btn" onclick="management(this,'cancel','id')">Cancel</button> </td>
                             </tr>
                         <% } %>
@@ -78,7 +78,7 @@
         </div>
     </div>
     <div class="manage">
-        <button type="button" class="btn btn-primary" onclick="newItem('powersupply')">New Power Supply</button>
+        <button type="button" class="btn btn-primary" onclick="newItem('powersupply.js')">New Power Supply</button>
         <button type="button" class="btn btn-primary" style="margin-left: 10px;" onclick="upload()">Import Excel</button>
         <button type="button" class="btn btn-primary"style="margin-left: 10px;">Export Excel</button>
     </div>

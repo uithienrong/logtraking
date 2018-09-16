@@ -4,13 +4,15 @@ var Schema = mongoose.Schema
 var AR75xxSchema = new Schema({
 	testcasename: String,
 	executedBy: String,
-	imeiModule: String,
-	fsnModule: String,
-	module: String,
-	fw: String,
-	iccid: String,
-	status: String,
-	issueID: String
+    timeStart: String,
+    localIP: String,
+    imei: String,
+    fsn: String,
+    module: String,
+    revision: String,
+    fw: String,
+    iccid: String,
+    status: String
 })
 
 module.exports = mongoose.model('AR75xx', AR75xxSchema)

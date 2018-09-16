@@ -94,13 +94,13 @@ function management(arg1, arg2, arg3) {
         if(arg3 == 'module'){
             url = '/inventory/module/update/' + id_obj;
         }else if (arg3 == 'uart'){
-            url = '/inventory/uart/update/' + id_obj;
+            url = '/inventory/uart.js/update/' + id_obj;
         }else if (arg3 == 'devkit'){
             url = '/inventory/devkit/update/' + id_obj;
         }else if (arg3 == 'usb'){
             url = '/inventory/usb/update/' + id_obj;
-        }else if (arg3 == 'powersupply'){
-            url = '/inventory/powersupply/update/' + id_obj;
+        }else if (arg3 == 'powersupply.js'){
+            url = '/inventory/powersupply.js/update/' + id_obj;
         }else if (arg3 == 'sim'){
             url = '/inventory/sim/update/' + id_obj;
         }else if (arg3 == 'anthena'){

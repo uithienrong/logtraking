@@ -94,13 +94,13 @@ function management(arg1, arg2, arg3) {
         if(arg3 == 'module'){
             url_temp = '/inventory/module/update/' + id_obj;
         }else if (arg3 == 'uart'){
-            url_temp = '/inventory/uart/update/' + id_obj;
+            url_temp = '/inventory/uart.js/update/' + id_obj;
         }else if (arg3 == 'devkit'){
             url_temp = '/inventory/devkit/update/' + id_obj;
         }else if (arg3 == 'usb'){
             url_temp = '/inventory/usb/update/' + id_obj;
-        }else if (arg3 == 'powersupply'){
-            url_temp = '/inventory/powersupply/update/' + id_obj;
+        }else if (arg3 == 'powersupply.js'){
+            url_temp = '/inventory/powersupply.js/update/' + id_obj;
         }else if (arg3 == 'sim'){
             url_temp = '/inventory/sim/update/' + id_obj;
         }else if (arg3 == 'anthena'){
@@ -148,7 +148,7 @@ function management(arg1, arg2, arg3) {
                     window.location = data.redirectUrl;
                 });
             }else if(arg3 == 'uart'){
-                $.post("/inventory/uart/delete/" + id_obj).then(function(data) {
+                $.post("/inventory/uart.js/delete/" + id_obj).then(function(data) {
                     window.location = data.redirectUrl;
                 });
             }else if(arg3 == 'devkit'){
@@ -159,8 +159,8 @@ function management(arg1, arg2, arg3) {
                 $.post("/inventory/usb/delete/" + id_obj).then(function(data) {
                     window.location = data.redirectUrl;
                 });
-            }else if(arg3 == 'powersupply'){
-                $.post("/inventory/powersupply/delete/" + id_obj).then(function(data) {
+            }else if(arg3 == 'powersupply.js'){
+                $.post("/inventory/powersupply.js/delete/" + id_obj).then(function(data) {
                     window.location = data.redirectUrl;
                 });
             }else if(arg3 == 'sim'){
@@ -194,7 +194,7 @@ function newItem(item) {
             window.location = data.redirectUrl;
         });
     }else if(item == 'uart') {
-        $.post("/inventory/uart/new").then(function (data) {
+        $.post("/inventory/uart.js/new").then(function (data) {
             window.location = data.redirectUrl;
         });
     }else if(item == 'devkit') {
@@ -205,8 +205,8 @@ function newItem(item) {
         $.post("/inventory/usb/new").then(function (data) {
             window.location = data.redirectUrl;
         });
-    }else if(item == 'powersupply') {
-        $.post("/inventory/powersupply/new").then(function (data) {
+    }else if(item == 'powersupply.js') {
+        $.post("/inventory/powersupply.js/new").then(function (data) {
             window.location = data.redirectUrl;
         });
     }else if(item == 'sim') {
