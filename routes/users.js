@@ -1,17 +1,16 @@
-const express = require('express');
-const router = express.Router();
-var expressValidator = require('express-validator');
+var express = require('express');
+var router = express.Router();
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
 
 
 //Bring in User Model
 let User = require('../models/user');
-router.use(expressValidator());
 
+// Register Form
 router.get('/register', function (req, res) {
-    res.render('register', {errors: null});
-})
+    res.render('register');
+});
 
 //register process
 router.post('/register', function (req, res) {
@@ -29,7 +28,10 @@ router.post('/register', function (req, res) {
 
     let errors =req.validationErrors();
     if(errors){
-        res.render('register', {errors:errors});
+        for(var i in errors){
+            req.flash('error', errors[i].msg)
+        }
+        res.render('register');
     } else {
         let newUser = new User({
             name:name,
@@ -61,7 +63,7 @@ router.post('/register', function (req, res) {
 
 //Login form
 router.get('/login', function (req, res) {
-    res.render('login', {success: req.flash('success'), error:req.flash('error'), authenticate_errors:null})
+    res.render('login')
 })
 
 //Login process
@@ -74,7 +76,10 @@ router.post('/login', function (req, res, next) {
 
     var errors =req.validationErrors();
     if(errors){
-        res.render('login', {authenticate_errors:errors, success: null, error:null});
+        for(var i in errors){
+            req.flash('error', errors[i].msg)
+        }
+        res.render('login');
     } else {
         passport.authenticate('local', {
             successRedirect: '/',
@@ -88,7 +93,7 @@ router.get('/logout', function (req, res) {
     req.logout();
     req.flash('success', 'You are logged out!');
     res.redirect('/users/login');
-})
+});
 
 
 router.get('/chart', function (req, res) {

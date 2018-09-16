@@ -1,16 +1,35 @@
 //input library
 var express = require('express');
 var path = require('path');
-var bodyParser = require('body-parser');
-var app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-var mongo = require('mongodb');
 var mongoose = require('mongoose');
-var flash = require('connect-flash');
+var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
 var session = require('express-session');
 var passport = require('passport');
+const config = require('./config/database');
+var app = express();
+var mongo = require('mongodb');
 
 
+app.use(session({
+    secret: 'foo',
+    resave: true,
+    saveUninitialized: true
+}));
+
+
+//Passport config
+require('./config/passport')(passport);
+//passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Express Messages Middleware
+app.use(require('connect-flash')());
+app.use(function (req, res, next) {
+    res.locals.messages = require('express-messages')(req, res);
+    next();
+});
 //config database
 
 //for mongoDB module
@@ -42,28 +61,45 @@ var arrExcel = xlsx.parse(__dirname + '/AR_INVENTORY.xlsx');
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-//Passport config
-require('./config/passport')(passport);
-//passport Middleware
-app.use(passport.initialize());
-app.use(passport.session());
+
+
+// Body Parser Middleware
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
+// Express Validator Middleware
+app.use(expressValidator({
+    errorFormatter: function(param, msg, value) {
+        var namespace = param.split('.')
+            , root    = namespace.shift()
+            , formParam = root;
+
+        while(namespace.length) {
+            formParam += '[' + namespace.shift() + ']';
+        }
+        return {
+            param : formParam,
+            msg   : msg,
+            value : value
+        };
+    }
+}));
+
 
 //load static file
-var router = require('./routes/users');
+var users = require('./routes/users');
 var home_route = require('./routes/home');
+app.use('/users', users);
+app.use('/', home_route);
 
 
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap')));
 app.use(express.static(path.join(__dirname, 'styles')));
 app.use(express.static(path.join(__dirname, 'script')));
 app.use(express.static(path.join(__dirname, 'image')));
-app.use(flash());
-app.use(session({
-    secret: 'foo',
-    resave: true,
-    saveUninitialized: true,
-    cookie: { secure: false }
-}));
+
 
 
 //Express Messages Middleware
@@ -72,10 +108,14 @@ app.use(function (req, res, next) {
     next();
 })
 
-app.use('/users', router);
-app.use('/', home_route);
 
 
+
+
+app.get('*', function(req, res, next){
+  res.locals.user = req.user || null;
+  next();
+});
 
 //functions
 app.get('/log', ensureAuthenticated, function (request, response) {
