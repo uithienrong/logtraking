@@ -50,15 +50,15 @@ route.post('/delete/:id', ensureAuthenticated, function(request, response){
     })
 })
 
-app.get('/new', ensureAuthenticated, function (request, response) {
+route.get('/new', ensureAuthenticated, function (request, response) {
     response.render('inventory/new/newUart.ejs');
 })
 
-app.post('/new', ensureAuthenticated, function (request, response) {
+route.post('/new', ensureAuthenticated, function (request, response) {
     response.send({err: 0, redirectUrl: "/inventory/uart/new"});
 })
 
-app.post('/cancel', ensureAuthenticated, function (request, response) {
+route.post('/cancel', ensureAuthenticated, function (request, response) {
     response.send({err: 0, redirectUrl: "/inventory/uart.js"});
 })
 

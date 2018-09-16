@@ -5,14 +5,14 @@ var ensureAuthenticated = require('../config/authenticate');
 //Load model
 var AnthenaAR = require('../models/anthena.js');
 
-app.get('/', ensureAuthenticated, function (req, res) {
+route.get('/', ensureAuthenticated, function (req, res) {
     AnthenaAR.find((err, anthenas) => {
         if (err) return res.status(500).send(err)
         return res.render('inventory/anthena.ejs', {anthena: anthenas});
     });
 })
 
-app.post('/update/:id', ensureAuthenticated, function(request, response){
+route.post('/update/:id', ensureAuthenticated, function(request, response){
 
     AnthenaAR.findById(request.params.id,function (err, anthena) {
         if(err) return handleError(err);
@@ -29,7 +29,7 @@ app.post('/update/:id', ensureAuthenticated, function(request, response){
     })
 })
 
-app.post('/createAnthena', ensureAuthenticated, function (req, res) {
+route.post('/createAnthena', ensureAuthenticated, function (req, res) {
     anthena = new AnthenaAR({asset_tag: req.body.asset_tag,
         model: 			req.body.model,
         location: 		req.body.location,
@@ -44,7 +44,7 @@ app.post('/createAnthena', ensureAuthenticated, function (req, res) {
     })
 })
 
-app.post('/delete/:id', ensureAuthenticated, function(request, response){
+route.post('/delete/:id', ensureAuthenticated, function(request, response){
 
     AnthenaAR.findByIdAndRemove(request.params.id,function (err, anthena) {
         if(err) return handleError(err);
@@ -52,15 +52,15 @@ app.post('/delete/:id', ensureAuthenticated, function(request, response){
     })
 })
 
-app.get('/new', ensureAuthenticated, function (request, response) {
+route.get('/new', ensureAuthenticated, function (request, response) {
     response.render('inventory/new/newAnthena.ejs');
 })
 
-app.post('/new', ensureAuthenticated, function (request, response) {
+route.post('/new', ensureAuthenticated, function (request, response) {
     response.send({err: 0, redirectUrl: "/inventory/anthena/new"});
 })
 
-app.post('/cancel', ensureAuthenticated, function (request, response) {
+route.post('/cancel', ensureAuthenticated, function (request, response) {
     response.send({err: 0, redirectUrl: "/inventory/anthena"});
 })
 

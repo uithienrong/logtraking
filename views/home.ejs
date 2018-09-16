@@ -8,20 +8,35 @@
 
 <div style="margin-left:50px;margin-right:50px">
     <div class="header panel-heading" style="background-image:linear-gradient(347deg, #48c6ef, #2399d2);height: 80px;text-align: center;">
-        <img src="/logo-tma.png" alt="logo-tma" style="width:100px; padding: 10px 0; height: auto; float: left">
+        <a href="/">
+            <img src="/logo-tma.png" alt="logo-tma" style="width:100px; padding: 10px 0; height: auto; float: left">
+        </a>
         <h2 style="margin-left: 10px;color: white;font-weight: bold;" class="col-sm-3">TMA WEB LOG</h2>
-
-        <div class="btn-group" style="float: right; padding: 10px 0">
-            <button type="button" class="btn btn-default">Action</button>
-            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                &#8675;
-            </button>
-            <ul class="dropdown-menu dropdown-menu-right">
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Help</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="/users/logout">Logout</a></li>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="/log">Log</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Inventory
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/inventory">Module</a></li>
+                        <li><a href="/inventory/devkit">Devkit</a></li>
+                        <li><a href="/inventory/uart">Uart</a></li>
+                        <li><a href="/inventory/anthena">Anthena</a></li>
+                        <li><a href="/inventory/sim">SIM</a></li>
+                        <li><a href="/inventory/usb">USB</a></li>
+                        <li><a href="/inventory/powersupply">PowerSupply</a></li>
+                        <li><a href="/inventory/other">Others</a></li>
+                    </ul>
+                </li>
+                <li><a href="/users/management">User Management</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                <li><a href="/users/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             </ul>
         </div>
-    </div>
+    </nav>
 </div>

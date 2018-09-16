@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
-
+var ensureAuthenticated = require('../config/authenticate');
 
 //Bring in User Model
 let User = require('../models/user');
@@ -93,6 +93,13 @@ router.get('/logout', function (req, res) {
     req.logout();
     req.flash('success', 'You are logged out!');
     res.redirect('/users/login');
+});
+
+router.get('/management', ensureAuthenticated, function (req, res) {
+    User.find((err, users) => {
+        if (err) return res.status(500).send(err)
+        return res.render('userManagement.ejs', {users: users});
+    });
 });
 
 
