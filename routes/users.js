@@ -15,13 +15,11 @@ router.get('/register', function (req, res) {
 //register process
 router.post('/register', function (req, res) {
     const name = req.body.name;
-    const ip = req.body.ip;
     const username = req.body.username;
     const password = req.body.password;
     const password2 = req.body.password2;
 
     req.checkBody('name', 'Name is required').notEmpty();
-    req.checkBody('ip', 'IP is required').notEmpty();
     req.checkBody('username', 'User Name is required').notEmpty();
     req.checkBody('password', 'Password is required').notEmpty();
     req.checkBody('password2', 'Password do not match').equals(req.body.password);
