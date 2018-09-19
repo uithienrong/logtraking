@@ -33,7 +33,6 @@ router.post('/register', function (req, res) {
     } else {
         let newUser = new User({
             name:name,
-            ip:ip,
             username:username,
             password:password
         });
