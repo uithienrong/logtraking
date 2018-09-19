@@ -47,3 +47,23 @@ ul.drop-accordian-menu a:hover {
 input {
     border-radius: 4px;
 }
+
+ul.success li{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    border-radius: 5px;
+}
+
+ul.error li{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    border-radius: 5px;
+}
+
+

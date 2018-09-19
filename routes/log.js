@@ -13,6 +13,15 @@ route.get('/', ensureAuthenticated, function (request, response) {
     });
 })
 
+route.get('/2', ensureAuthenticated, function (request, response) {
+    LogInfoAR.find({}).sort({"timeStart": -1}).exec(function (err,results) {
+        console.log(results);
+        response.render('log2.ejs', { data: results});
+    });
+})
+
+
+
 
 
 module.exports = route;

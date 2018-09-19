@@ -6,10 +6,6 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    ip: {
-        type: String,
-        required: true
-    },
     username: {
         type: String,
         required: true
