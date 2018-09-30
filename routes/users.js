@@ -104,5 +104,15 @@ router.get('/chart', function (req, res) {
     res.render('charts/example.ejs')
 })
 
+router.post('/delete', function (req, res) {
+    User.findByIdAndRemove(req.body.id, function (err, user) {
+        if(err) return handleError(err);
+        console.log(user);
+        req.flash('success', 'Delete user successful!');
+        return res.redirect('/users/management');
+    })
+
+});
+
 
 module.exports = router;

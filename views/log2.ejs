@@ -12,8 +12,10 @@
         var pass = 0;
         var fail = 0;
         var na = 0;
+        var date_count = {};
 
         for(var i = 0; i < data.length; i++){
+            //status
             if(data[i][11] == "PASSED"){
                 pass += 1;
             }else if(data[i][11] == "FAILED"){
@@ -21,14 +23,28 @@
             }else{
                 na += 1;
             }
+
+            //count by date
+            var date =  data[i][3].substring(0,10).length > 0 ? data[i][3].substring(0,10) : 'none';
+            if (date in date_count){
+                date_count[date] += 1;
+            }else{
+                date_count[date] = 1;
+            }
+
         }
         var labels = ['Passed', 'Failed', 'NA'];
         var dataset = [pass, fail, na];
-        return [labels, dataset];
+
+        var date_titles = Object.keys(date_count).reverse();
+        var date_values = $.map(date_count, function(v) { return v; }).reverse();
+
+        return [labels, dataset, date_titles, date_values];
     }
 
     function update_chart(chart, label, data){
         chart.data.datasets[0].data = data;
+        chart.data.labels = label;
 
         chart.update();
     }
@@ -69,16 +85,43 @@
             }
         });
 
+        var ctx2 = document.getElementById("myChart2").getContext('2d');
+        var myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: datafillter[2],
+                datasets: [{
+                    data: datafillter[3],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255,99,132,1)'
+                    ,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                },legend: {
+                    display: false
+                },title: {
+                    display: true,
+                    text: 'Total test case per date'
+                }
+            }
+        });
+
+
         $('input').on( 'keyup change', function () {
             var data = table.rows( { filter : 'applied'} ).data();
-            var datafillter = fun1(data);
+            var datafillter = cal_data(data);
             update_chart(myChart,datafillter[0], datafillter[1] );
+            update_chart(myChart2,datafillter[2], datafillter[3] );
         });
     });
-
-
-
-
 
 </script>
 <style>
@@ -155,12 +198,14 @@
             </tbody>
         </table>
     </div>
-    <div style="width: 300px">
-        <canvas id="myChart" width="400" height="400"></canvas>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+            <div class="col-xs-7">
+                <canvas id="myChart2" width="900" height="400"></canvas>
+            </div>
+        </div>
     </div>
 </div>
-
-
-<script>
-
-</script>

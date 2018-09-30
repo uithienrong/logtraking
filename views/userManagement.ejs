@@ -2,7 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="/main.js"></script>
+<script src="/user.js"></script>
 <link href="/main.css" rel="stylesheet">
 <link href="/user.css" rel="stylesheet">
 <!------ Include the above in your HEAD tag ---------->
@@ -15,17 +15,18 @@
         <h2 style="margin-left: 10px;color: white;font-weight: bold;" class="col-sm-3">TMA WEB LOG</h2>
     </div>
     <div class="container-fluid" style="margin-top: 20px">
+        <%- messages() %>
         <h2>Users Management</h2>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-7">
                 <table class="table table-hover table-curved" style="margin-top: 40px">
                     <thead class="thead-dark">
                     <tr class="bg-primary">
                         <th width="5%">No</th>
                         <th width="30%">Name</th>
-                        <th width="25%">User Name</th>
-                        <th width="17%">Role</th>
-                        <th width="22%">Function</th>
+                        <th width="20%">User Name</th>
+                        <th width="15%">Role</th>
+                        <th width="80px">Function</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,7 +40,30 @@
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%=i %>">Delete</button>
+                                        <!-- Modal -->
+                                        <div id="<%=i %>" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Confirm delete</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Do you want delete account
+                                                            <span class="label label-danger"><%= users[i].username %></span> ?
+                                                        </p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="delUser('<%= users[i]._id %>')">Yes</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                         <button type="button" class="btn btn-success">Chart</button>
                                     </div>
                                 </td>
