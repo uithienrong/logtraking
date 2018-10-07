@@ -26,7 +26,7 @@
                         <th width="30%">Name</th>
                         <th width="20%">User Name</th>
                         <th width="15%">Role</th>
-                        <th width="80px">Function</th>
+                        <th width="70px">Function</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,32 +39,80 @@
                                 <td><%= users[i].role %></td>
                                 <td>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-primary">Edit</button>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%=i %>">Delete</button>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<%=i %>">Edit</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del<%=i %>">Delete</button>
+                                        <button type="button" class="btn btn-success">Chart</button>
                                         <!-- Modal -->
-                                        <div id="<%=i %>" class="modal fade" role="dialog">
-                                            <div class="modal-dialog">
-
-                                                <!-- Modal content-->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Confirm delete</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Do you want delete account
-                                                            <span class="label label-danger"><%= users[i].username %></span> ?
-                                                        </p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="delUser('<%= users[i]._id %>')">Yes</button>
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                        <form action="/users/delete/<%= users[i]._id %>" method="post">
+                                            <div id="del<%=i %>" class="modal fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Confirm delete</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Do you want delete account
+                                                                <span class="label label-danger"><%= users[i].username %></span> ?
+                                                            </p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <input type="submit" class="btn btn-danger" value="Yes">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                                        </div>
                                                     </div>
                                                 </div>
-
                                             </div>
-                                        </div>
-                                        <button type="button" class="btn btn-success">Chart</button>
+                                        </form>
+                                        <form action="/users/update/<%= users[i]._id %>" method="post">
+                                            <div id="edit<%=i %>" class="modal fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Update User Information</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label>Name: </label>
+                                                                <input type="text" class="form-control" name="name" value="<%= users[i].name %>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>User Name: </label>
+                                                                <input type="text" class="form-control" name="username" value="<%= users[i].username %>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Rule: </label>
+                                                                <select class="form-control selectpicker" name="role">
+                                                                    <% if(users[i].role == 'Admin'){%>
+                                                                        <option value="User">User</option>
+                                                                        <option value="Admin" selected>Admin</option>
+                                                                    <% } else {%>
+                                                                        <option value="User" selected>User</option>
+                                                                        <option value="Admin">Admin</option>
+                                                                    <% }%>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Password: </label>
+                                                                <input type="password" class="form-control" name="password">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Confirm: </label>
+                                                                <input type="password" class="form-control" name="password2">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <input type="submit" class="btn btn-success" value="Update">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>

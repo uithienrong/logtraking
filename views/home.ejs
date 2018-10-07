@@ -31,7 +31,12 @@
                         <li><a href="/inventory/other">Others</a></li>
                     </ul>
                 </li>
-                <li><a href="/users/management">User Management</a></li>
+                <% if(user) {%>
+                    <% if(user.role == 'Admin') { %>
+                        <li><a href="/users/management">User Management</a></li>
+                    <% } %>
+                <% } %>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>

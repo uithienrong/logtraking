@@ -104,8 +104,12 @@ router.get('/chart', function (req, res) {
     res.render('charts/example.ejs')
 })
 
-router.post('/delete', function (req, res) {
-    User.findByIdAndRemove(req.body.id, function (err, user) {
+router.post('/delete/:id', function (req, res) {
+    if(req.params.id == req.user._id){
+        req.flash('error', "Can't delete current user!");
+        return res.redirect('/users/management');
+    }
+    User.findByIdAndRemove(req.params.id, function (err, user) {
         if(err) return handleError(err);
         console.log(user);
         req.flash('success', 'Delete user successful!');
@@ -113,6 +117,56 @@ router.post('/delete', function (req, res) {
     })
 
 });
+
+router.post('/update/:id', function (req, res) {
+    const name = req.body.name;
+    const username = req.body.username;
+    const password = req.body.password;
+    const role = req.body.role;
+    const password2 = req.body.password2;
+
+    req.checkBody('name', 'Name is required').notEmpty();
+    req.checkBody('username', 'User Name is required').notEmpty();
+    req.checkBody('password', 'Password is required').notEmpty();
+    req.checkBody('password2', 'Password do not match').equals(req.body.password);
+
+    let errors =req.validationErrors();
+    if(errors){
+        for(var i in errors){
+            req.flash('error', errors[i].msg)
+        }
+        User.find((err, users) => {
+            if (err) return res.status(500).send(err)
+            return res.render('userManagement.ejs', {users: users});
+        });
+    } else {
+        User.findById(req.params.id,function (err, user) {
+            if(err) return handleError(err);
+            user.name = name;
+            user.username = username;
+            user.password = password;
+            user.role = role;
+
+            bcrypt.genSalt(10, function (err, salt) {
+                bcrypt.hash(user.password, salt, function (err, hash) {
+                    if(err){
+                        console.log(err);
+                    }
+                    user.password = hash;
+                    user.save(function (err) {
+                        if(err){
+                            console.log(err);
+                            return
+                        } else {
+                            req.flash('success', 'You have updated successful!!!');
+                            res.redirect('/users/management');
+                        }
+                    })
+                });
+            });
+        });
+    }
+})
 
 
 module.exports = router;
