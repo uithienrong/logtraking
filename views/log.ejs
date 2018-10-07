@@ -1,92 +1,211 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="/main.js"></script>
-<link href="/main.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+<script>
+    function cal_data(data) {
+
+        var pass = 0;
+        var fail = 0;
+        var na = 0;
+        var date_count = {};
+
+        for(var i = 0; i < data.length; i++){
+            //status
+            if(data[i][11] == "PASSED"){
+                pass += 1;
+            }else if(data[i][11] == "FAILED"){
+                fail += 1;
+            }else{
+                na += 1;
+            }
+
+            //count by date
+            var date =  data[i][3].substring(0,10).length > 0 ? data[i][3].substring(0,10) : 'none';
+            if (date in date_count){
+                date_count[date] += 1;
+            }else{
+                date_count[date] = 1;
+            }
+
+        }
+        var labels = ['Passed', 'Failed', 'NA'];
+        var dataset = [pass, fail, na];
+
+        var date_titles = Object.keys(date_count).reverse();
+        var date_values = $.map(date_count, function(v) { return v; }).reverse();
+
+        return [labels, dataset, date_titles, date_values];
+    }
+
+    function update_chart(chart, label, data){
+        chart.data.datasets[0].data = data;
+        chart.data.labels = label;
+
+        chart.update();
+    }
+
+    $(document).ready( function () {
+        var table = $('#mytable').DataTable({
+            scrollY: 400,
+            scrollX: 400
+        });
+        var data = table.rows( { filter : 'applied'} ).data();
+        var datafillter = cal_data(data);
+
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: datafillter[0],
+                datasets: [{
+                    label: '# of Votes',
+                    data: datafillter[1],
+                    backgroundColor: [
+                        'rgba(0, 235, 1, 0.6)',
+                        'rgba(220, 0, 0, 0.6)',
+                        'rgba(255, 253, 26, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 171, 1, 1)',
+                        'rgba(255, 0, 0, 0.6)',
+                        'rgba(255, 223, 42, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+
+        var ctx2 = document.getElementById("myChart2").getContext('2d');
+        var myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: datafillter[2],
+                datasets: [{
+                    data: datafillter[3],
+                    backgroundColor: 'rgba(0, 137, 246, 0.6)',
+                    borderColor: 'rgba(0, 113, 246, 1)'
+                    ,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                },legend: {
+                    display: false
+                },title: {
+                    display: true,
+                    text: 'Total test case per date'
+                }
+            }
+        });
+
+
+        $('input').on( 'keyup change', function () {
+            var data = table.rows( { filter : 'applied'} ).data();
+            var datafillter = cal_data(data);
+            update_chart(myChart,datafillter[0], datafillter[1] );
+            update_chart(myChart2,datafillter[2], datafillter[3] );
+        });
+    });
+
+</script>
+<style>
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-top: 20px;
+    }
+
+    table td, td {
+        padding: 10px;
+    }
+
+    thead {
+        padding: 20px;
+    }
+
+    table>tbody {
+        overflow: auto;
+        height: 280px;
+        overflow-x: hidden;
+    }
+
+</style>
 <!------ Include the above in your HEAD tag ---------->
 
 <div style="margin-left:50px;margin-right:50px">
-	<div class="header panel-heading" style="background-image:linear-gradient(347deg, #48c6ef, #2399d2);height: 80px;text-align: center;">
-		<a href="/">
-			<img src="/logo-tma.png" alt="logo-tma" style="width:100px; padding: 10px 0; height: auto; float: left">
-		</a>
-		<h2 style="margin-left: 150px;color: white;font-weight: bold;">TMA WEB LOG</h2>
-	</div>
+    <div class="header panel-heading" style="background-image:linear-gradient(347deg, #48c6ef, #2399d2);height: 80px;text-align: center;">
+        <a href="/">
+            <img src="/logo-tma.png" alt="logo-tma" style="width:100px; padding: 10px 0; height: auto; float: left">
+        </a>
+        <h2 style="margin-left: 150px;color: white;font-weight: bold;">TMA WEB LOG</h2>
+    </div>
     <hr>
-	<p>Inspired by this <a href="http://tma.com.vn">TMA Solutions</a></p>
-    <div class="row">
-        <div class="panel panel-primary filterable">
-            <div class="panel-heading">
-                <h3 class="panel-title">Log Information</h3>
-                <div class="pull-right">
-                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-                </div>
+    <p>Inspired by this <a href="http://tma.com.vn">TMA Solutions</a></p>
+    <div>
+        <table class="table table-hover table-striped header-fixed" id="mytable">
+            <thead class="bg-primary">
+            <tr>
+                <th>No</th>
+                <th>Test case Name</th>
+                <th>Excuted By</th>
+                <th>Time Start</th>
+                <th>LocalIP</th>
+                <th>Imei</th>
+                <th>FSN</th>
+                <th>Module</th>
+                <th>Revision</th>
+                <th>FW</th>
+                <th>ICCID</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(data != null) {%>
+                <% for(var i = 0; i < data.length; i++) {%>
+                    <tr>
+                        <td><%= i + 1%></td>
+                        <td class="c1"><%=data[i].file%></td>
+                        <td class="c1"><%=data[i].executedBy %></td>
+                        <td class="c1"><%=data[i].timeStart %></td>
+                        <td class="c1"><%=data[i].localIP%></td>
+                        <td class="c1"><%=data[i].imei%></td>
+                        <td class="c1"><%=data[i].fsn%></td>
+                        <td class="c1"><%=data[i].module%></td>
+                        <td class="c1"><%=data[i].revision%></td>
+                        <td class="c1"><%=data[i].fw%></td>
+                        <td class="c1"><%=data[i].iccid%></td>
+                        <td class="c1"><%=data[i].status%></td>
+                    </tr>
+                <% } %>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <canvas id="myChart" width="400" height="400"></canvas>
             </div>
-			<div style="overflow-x:scroll;overflow-y:scroll;height:700px">
-				<table class="table" id="mytable">
-					<thead>
-						<tr class="filters" style="width:100%">
-							<th>
-								<input style="width:50px;" type="text" class="form-control" placeholder="No" disabled>
-							</th>
-							<th>
-								<input style="width:400px" type="text" class="form-control" placeholder="Test case Name" disabled>
-							</th>
-							<th>
-								<input style="width:150px" type="text" class="form-control" placeholder="Excuted By" disabled>
-							</th>
-							<th >
-								<input style="width:150px" type="text" class="form-control" placeholder="Time Start" disabled>
-							</th>
-							<th >
-								<input style="width:150px" type="text" class="form-control" placeholder="LocalIP" disabled>
-							</th>
-							<th >
-								<input style="width:150px" type="text" class="form-control" placeholder="Imei" disabled>
-							</th>
-							<th >
-								<input style="width:150px" type="text" class="form-control" placeholder="FSN" disabled>
-							</th>
-							<th >
-								<input style="width:150px" type="text" class="form-control" placeholder="Module" disabled>
-							</th>
-							<th >
-								<input style="width:150px" type="text" class="form-control" placeholder="Revision" disabled>
-							</th>
-							<th >
-								<input style="width:150px" type="text" class="form-control" placeholder="FW" disabled>
-							</th>
-							<th >
-								<input style="width:150px" type="text" class="form-control" placeholder="ICCID" disabled>
-							</th>
-							<th >
-								<input style="width:150px" type="text" class="form-control" placeholder="Status" disabled>
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-                        <% if(data != null) {%>
-						<% for(var i = 0; i < data.length; i++) {%>
-							<tr>
-								<td><%= i + 1%></td>
-								<td class="c1"><%=data[i].file%></td>
-								<td class="c1"><%=data[i].executedBy %></td>
-								<td class="c1"><%=data[i].timeStart %></td>
-								<td class="c1"><%=data[i].localIP%></td>
-								<td class="c1"><%=data[i].imei%></td>
-								<td class="c1"><%=data[i].fsn%></td>
-								<td class="c1"><%=data[i].module%></td>
-								<td class="c1"><%=data[i].revision%></td>
-								<td class="c1"><%=data[i].fw%></td>
-								<td class="c1"><%=data[i].iccid%></td>
-								<td class="c1"><%=data[i].status%></td>
-							</tr>
-						<% } %>
-                        <% } %>
-					</tbody>
-				</table>
-			</div>
+            <div class="col-xs-7">
+                <canvas id="myChart2" width="900" height="400"></canvas>
+            </div>
         </div>
     </div>
 </div>

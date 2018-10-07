@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/main.js"></script>
+<link href="/main.css" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+
+<div style="margin-left:50px;margin-right:50px">
+	<div class="header panel-heading" style="background-image:linear-gradient(347deg, #48c6ef, #2399d2);height: 80px;text-align: center;">
+		<a href="/">
+			<img src="/logo-tma.png" alt="logo-tma" style="width:100px; padding: 10px 0; height: auto; float: left">
+		</a>
+		<h2 style="margin-left: 150px;color: white;font-weight: bold;">TMA WEB LOG</h2>
+	</div>
+    <hr>
+	<p>Inspired by this <a href="http://tma.com.vn">TMA Solutions</a></p>
+    <div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Log Information</h3>
+                <div class="pull-right">
+                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                </div>
+            </div>
+			<div style="overflow-x:scroll;overflow-y:scroll;height:700px">
+				<table class="table" id="mytable">
+					<thead>
+						<tr class="filters" style="width:100%">
+							<th>
+								<input style="width:50px;" type="text" class="form-control" placeholder="No" disabled>
+							</th>
+							<th>
+								<input style="width:400px" type="text" class="form-control" placeholder="Test case Name" disabled>
+							</th>
+							<th>
+								<input style="width:150px" type="text" class="form-control" placeholder="Excuted By" disabled>
+							</th>
+							<th >
+								<input style="width:150px" type="text" class="form-control" placeholder="Time Start" disabled>
+							</th>
+							<th >
+								<input style="width:150px" type="text" class="form-control" placeholder="LocalIP" disabled>
+							</th>
+							<th >
+								<input style="width:150px" type="text" class="form-control" placeholder="Imei" disabled>
+							</th>
+							<th >
+								<input style="width:150px" type="text" class="form-control" placeholder="FSN" disabled>
+							</th>
+							<th >
+								<input style="width:150px" type="text" class="form-control" placeholder="Module" disabled>
+							</th>
+							<th >
+								<input style="width:150px" type="text" class="form-control" placeholder="Revision" disabled>
+							</th>
+							<th >
+								<input style="width:150px" type="text" class="form-control" placeholder="FW" disabled>
+							</th>
+							<th >
+								<input style="width:150px" type="text" class="form-control" placeholder="ICCID" disabled>
+							</th>
+							<th >
+								<input style="width:150px" type="text" class="form-control" placeholder="Status" disabled>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+                        <% if(data != null) {%>
+						<% for(var i = 0; i < data.length; i++) {%>
+							<tr>
+								<td><%= i + 1%></td>
+								<td class="c1"><%=data[i].file%></td>
+								<td class="c1"><%=data[i].executedBy %></td>
+								<td class="c1"><%=data[i].timeStart %></td>
+								<td class="c1"><%=data[i].localIP%></td>
+								<td class="c1"><%=data[i].imei%></td>
+								<td class="c1"><%=data[i].fsn%></td>
+								<td class="c1"><%=data[i].module%></td>
+								<td class="c1"><%=data[i].revision%></td>
+								<td class="c1"><%=data[i].fw%></td>
+								<td class="c1"><%=data[i].iccid%></td>
+								<td class="c1"><%=data[i].status%></td>
+							</tr>
+						<% } %>
+                        <% } %>
+					</tbody>
+				</table>
+			</div>
+        </div>
+    </div>
+</div>
