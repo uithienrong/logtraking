@@ -34,6 +34,8 @@ mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+
+
 //load Excel file
 var xlsx = require('node-xlsx');
 var arrExcel = xlsx.parse(__dirname + '/AR_INVENTORY.xlsx');
