@@ -13,4 +13,4 @@ var logSchema = new Schema({
     serial: String
 })
 
-module.exports = mongoose.model('run_time', logSchema)
+module.exports = mongoose.model('run_time', logSchema, 'run_time')
