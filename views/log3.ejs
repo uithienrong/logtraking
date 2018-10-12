@@ -75,7 +75,7 @@
         $('input').on( 'keyup change', function () {
             var data = table.rows( { filter : 'applied'} ).data();
             var datafillter = cal_data(data);
-            update_chart(myChart2,datafillter[2], datafillter[3] );
+            update_chart(myChart2,datafillter[0], datafillter[1] );
         });
     });
 
@@ -114,44 +114,46 @@
     </div>
     <hr>
     <p>Inspired by this <a href="http://tma.com.vn">TMA Solutions</a></p>
-    <div>
-        <table class="table table-hover table-striped header-fixed" id="mytable">
-            <thead class="bg-primary">
-            <tr>
-                <th>No</th>
-                <th>User</th>
-                <th>Client</th>
-                <th>Duration</th>
-                <th>Test case name</th>
-                <th>Time Start</th>
-                <th>IMEI</th>
-                <th>CCID</th>
-                <th>Product</th>
-                <th>Serial</th>
-            </tr>
-            </thead>
-            <tbody>
-            <% if(data != null) {%>
-            <% for(var i = 0; i < data.length; i++) {%>
-            <tr>
-                <td><%= i + 1%></td>
-                <td class="c1"><%=data[i].user%></td>
-                <td class="c1"><%=data[i].client %></td>
-                <td class="c1"><%=data[i].duration %></td>
-                <td class="c1"><%=data[i].testcase %></td>
-                <td class="c1"><%=data[i].startTime%></td>
-                <td class="c1"><%=data[i].imei %></td>
-                <td class="c1"><%=data[i].ccid %></td>
-                <td class="c1"><%=data[i].product %></td>
-                <td class="c1"><%=data[i].serial %></td>
-            </tr>
-            <% } %>
-            <% } %>
-            </tbody>
-        </table>
-    </div>
-    <div class="container">
-        <div class="row">
+    <div class="row">
+        <div class="container align-content-center">
+            <div class="col-sm-10">
+                <table class="table table-hover table-striped header-fixed" id="mytable">
+                    <thead class="bg-primary">
+                    <tr>
+                        <th>No</th>
+                        <th>User</th>
+                        <th>Client</th>
+                        <th>Duration</th>
+                        <th>Test case name</th>
+                        <th>Time Start</th>
+                        <th>IMEI</th>
+                        <th>CCID</th>
+                        <th>Product</th>
+                        <th>Serial</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% if(data != null) {%>
+                        <% for(var i = 0; i < data.length; i++) {%>
+                            <tr>
+                                <td><%= i + 1%></td>
+                                <td class="c1"><%=data[i].user%></td>
+                                <td class="c1"><%=data[i].client %></td>
+                                <td class="c1"><%=data[i].duration %></td>
+                                <td class="c1"><%=data[i].testcase %></td>
+                                <td class="c1"><%=data[i].startTime%></td>
+                                <td class="c1"><%=data[i].imei %></td>
+                                <td class="c1"><%=data[i].ccid %></td>
+                                <td class="c1"><%=data[i].product %></td>
+                                <td class="c1"><%=data[i].serial %></td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
             <div class="col-xs-7">
                 <canvas id="myChart2" width="900" height="400"></canvas>
             </div>
